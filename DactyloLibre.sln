@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DactyloLibre", "DactyloLibre\DactyloLibre.csproj", "{98837E15-7FE4-430A-A5C4-A1AA586BA147}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98837E15-7FE4-430A-A5C4-A1AA586BA147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98837E15-7FE4-430A-A5C4-A1AA586BA147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98837E15-7FE4-430A-A5C4-A1AA586BA147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98837E15-7FE4-430A-A5C4-A1AA586BA147}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2B7A051-5A5C-4528-AC08-40626C820889}
+	EndGlobalSection
+EndGlobal
