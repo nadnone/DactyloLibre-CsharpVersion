@@ -10,7 +10,7 @@ namespace DactyloLibre
 {
     class ResultatTreatment
     {
-        private string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)+"\\stats.txt";
+        private string path = ".\\stats.txt";
 
         public List<List<string>> readStats()
         {
@@ -20,10 +20,10 @@ namespace DactyloLibre
 
             List <List<string>> listStats = new List<List<string>> { };
             List<string> listValues = new List<string> { };
-            int linecount = 0;
+            
             string[] values = new string[4];
-
             string read = "";
+
             while ((read = sr.ReadLine()) != null)
             {
 
@@ -35,10 +35,8 @@ namespace DactyloLibre
                 listValues.Add(values[3]);
 
                 listStats.Add(listValues);
-                listValues.Clear();
+                listValues = new List<string> { };
 
-                linecount++;
-                
             }
             return listStats;
         }

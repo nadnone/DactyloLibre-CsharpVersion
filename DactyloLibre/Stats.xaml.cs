@@ -23,8 +23,9 @@ namespace DactyloLibre
     {
         public class itemForList
         {
-            public string name { get; set; }
-            public double score { get; set; }
+            public string noms { get; set; }
+            public double vitesse { get; set; }
+            public int scores { get; set; }
             public int fautes { get; set; }
             public int temps { get; set; }
         }
@@ -39,31 +40,6 @@ namespace DactyloLibre
             ResultatTreatment rslt = new ResultatTreatment();
             List<List<string>> listStats = rslt.readStats();
 
-            GridView gridview = new GridView();
-            listview.View = gridview;
-
-            gridview.Columns.Add(new GridViewColumn
-            {
-                Header = "Nom",
-                DisplayMemberBinding = new Binding("nom")
-            });
-            gridview.Columns.Add(new GridViewColumn
-            {
-                Header = "Score [c/s]",
-                DisplayMemberBinding = new Binding("score")
-            });
-            gridview.Columns.Add(new GridViewColumn
-            {
-                Header = "Fautes",
-                DisplayMemberBinding = new Binding("fautes")
-            });
-            gridview.Columns.Add(new GridViewColumn
-            {
-                Header = "Temps",
-                DisplayMemberBinding = new Binding("temps")
-            });
-
-
 
             if (listStats.Count < 1)
             {
@@ -71,20 +47,24 @@ namespace DactyloLibre
             }
             else
             {
+                List<itemForList> itemList = new List<itemForList> { };
+
                 for (int i = 0; i < listStats.Count; i++)
                 {
                     List<string> list = listStats[i];
 
-                    listview.Items.Add(new itemForList
-                    {
-                        name = list[0],
-                        score = (double)(Convert.ToInt32(list[1]) / Convert.ToInt32(list[3])),
+
+                    itemList.Add(new itemForList{
+                        noms = list[0],
+                        scores = Convert.ToInt32(list[1]),
+                        vitesse = (double)(Convert.ToInt32(list[1]) / (Convert.ToInt32(list[3]) <= 0 ? 1: Convert.ToInt32(list[3]))),
                         fautes = Convert.ToInt32(list[2]),
                         temps = Convert.ToInt32(list[3])
                     });
 
-
                 }
+
+                statsDataGrid.ItemsSource = itemList;
             }
 
         }

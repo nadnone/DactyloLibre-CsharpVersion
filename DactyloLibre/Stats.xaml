@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DactyloLibre"
         mc:Ignorable="d"
-        Title="Stats" Height="450" Width="800">
-    <ListView x:Name="listview" Loaded="loadedpage" >
-        <ListView.View>
-            <GridView>
-                <GridViewColumn/>
-            </GridView>
-        </ListView.View>
-    </ListView>
+        Title="Stats" Height="450" Width="800" Loaded="loadedpage">
+    <Grid>
+        <DataGrid x:Name="statsDataGrid" AutoGenerateColumns="False" HorizontalContentAlignment="Stretch" Height="421">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Noms" Binding="{Binding noms}" Width="25*"/>
+                <DataGridTextColumn Header="Vitesse [c/s]" Binding="{Binding vitesse}" Width="25*"/>
+                <DataGridTextColumn Header="Scores" Binding="{Binding scores}" Width="25*"/>
+                <DataGridTextColumn Header="Fautes" Binding="{Binding fautes}" Width="25*"/>
+                <DataGridTextColumn Header="Temps" Binding="{Binding temps}" Width="25*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
 </Window>
