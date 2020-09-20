@@ -22,6 +22,6 @@ Ce petit logiciel vous permetra de vous entrainer à la dactylographie gratuitem
 #### Démonstration
 Ces images sont une démonstration et ne sont pas forcément à jour par rapport au code source
 
-![gif](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/tree/master/demo/demo.gif)
+<img src="demo/demo.gif" width="50%">
 
-![png](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/tree/master/demo/demo.png)
+<img src="demo/demo.png" width="50%">
