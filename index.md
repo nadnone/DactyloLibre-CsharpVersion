@@ -11,10 +11,10 @@ DactyloLibre est utilisable en soi. Cependant, il n'en est qu'à sa première ve
  | DactyloLibre Alpha 1.0   | [EXE non signé](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0/DactyloLibre.exe) |
 
 #### Démonstration
-Ces images sont une démonstration et ne sont pas forcément à jour par rapport au code source (les images ne semblent pas apparaîtres sur les pages)
+Ces images sont une démonstration et ne sont pas forcément à jour par rapport au code source
 
 
-  <img src="demo/demo.gif" width="40%"/>  <img src="demo/demo.png" width="40%"/> 
+  <img src="demo/demo.gif" width="100%"/> 
  
 #### Si vous avez des questions
 - [Vous pouvez les poster ici](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/question)
