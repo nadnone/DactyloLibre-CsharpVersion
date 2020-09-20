@@ -63,7 +63,6 @@ namespace DactyloLibre
                     });
 
                 }
-
                 statsDataGrid.ItemsSource = itemList;
             }
 

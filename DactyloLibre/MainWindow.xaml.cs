@@ -195,7 +195,7 @@ namespace DactyloLibre
 
         private void aboutClick(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/spoutnik911/DactyloLibre");
+            System.Diagnostics.Process.Start("https://github.com/spoutnik911/DactyloLibre-CsharpVersion");
         }
 
         private List<String> LoadText()
@@ -285,7 +285,7 @@ namespace DactyloLibre
 
         private void playDactylo(object sender, RoutedEventArgs e)
         {
-            if (!playGame && File.Exists(textPath))
+            if (!playGame && File.Exists(textPath) && nameUser.Text != "Tapez votre nom ici")
             {
                 alertLabel.Foreground = Brushes.Green;
                 textAlertMessage = "Partie lancée, le temps est compté !";
@@ -300,6 +300,12 @@ namespace DactyloLibre
             {
                 alertLabel.Foreground = Brushes.Red;
                 textAlertMessage = "Fichier manquant !";
+                dTimer.Start();
+            }
+            else if(nameUser.Text == "Tapez votre nom ici")
+            {
+                alertLabel.Foreground = Brushes.Red;
+                textAlertMessage = "Donnez un nom !";
                 dTimer.Start();
             }
             else

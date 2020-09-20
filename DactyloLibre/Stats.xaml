@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DactyloLibre"
         mc:Ignorable="d"
-        Title="Stats" Height="450" Width="800" Loaded="loadedpage">
+        Title="Stats" Height="450" Width="800" Background="#FF24252A" Loaded="loadedpage">
     <Grid>
-        <DataGrid x:Name="statsDataGrid" AutoGenerateColumns="False" HorizontalContentAlignment="Stretch" Height="421">
+        <DataGrid x:Name="statsDataGrid" Background="#FF242424" AutoGenerateColumns="False" AlternatingRowBackground="#385E0F" RowBackground="#61B329" Foreground="Black" FontFamily="Calibri" FontSize="18">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Noms" Binding="{Binding noms}" Width="25*"/>
                 <DataGridTextColumn Header="Vitesse [c/s]" Binding="{Binding vitesse}" Width="25*"/>
