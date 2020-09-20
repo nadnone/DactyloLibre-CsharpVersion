@@ -14,7 +14,7 @@ DactyloLibre est utilisable en soi. Cependant, il n'en est qu'à sa première ve
 Ces images sont une démonstration et ne sont pas forcément à jour par rapport au code source (les images ne semblent pas apparaîtres sur les pages)
 
 
- | <img src="demo/demo.gif" width="45%"/> | <img src="demo/demo.png" width="45%"/> |
+ | <img src="demo/demo.gif" width="40%"/> | <img src="demo/demo.png" width="40%"/> |
  | -------------------------------------- | -------------------------------------- |
  
 #### Si vous avez des questions
