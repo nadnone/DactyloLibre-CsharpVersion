@@ -1,5 +1,11 @@
 theme: jekyll-theme-minimal
-markdown: CommonMark
-commonmark:
-  options: ["SMART", "FOOTNOTES"]
-  extensions: ["table"]
+markdown: "kramdown"
+kramdown:
+    input: "GFM"
+    syntax_highlighter: rouge
+    math_engine: "mathjax"
+    hard_wrap: "false"
+    
+lang: "fr-CH"
+encoding: UTF-8
+title: "DactyloLibre"
