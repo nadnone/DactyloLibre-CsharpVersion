@@ -11,7 +11,7 @@ Ce petit logiciel vous permetra de vous entrainer à la dactylographie gratuitem
 - [Vous pouvez les poster ici](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/question)
 
 #### Les aides suivantes sont les bienvenues
-* [Conseils d'améliorations](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/issues/new/choose)
+* [Conseils d'améliorations](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/enhancement)
 * [Signalements de bugs](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/bug)
 * [Aide dans la conception](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/pulls)
   * Média
