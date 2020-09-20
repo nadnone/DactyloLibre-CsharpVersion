@@ -14,8 +14,7 @@ DactyloLibre est utilisable en soi. Cependant, il n'en est qu'à sa première ve
 Ces images sont une démonstration et ne sont pas forcément à jour par rapport au code source (les images ne semblent pas apparaîtres sur les pages)
 
 
- | <img src="demo/demo.gif" width="500"/> | <img src="demo/demo.png" width="500"/> |
- | -------------------------------------- | -------------------------------------- |
+ <img src="demo/demo.gif" width="50%"/> <img src="demo/demo.png" width="50%"/> 
  
 #### Si vous avez des questions
 - [Vous pouvez les poster ici](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/question)
