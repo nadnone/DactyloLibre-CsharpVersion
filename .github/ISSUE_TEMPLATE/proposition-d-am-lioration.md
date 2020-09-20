@@ -8,9 +8,9 @@ assignees: ''
 ---
 
 **Amélioration par rapport à un problème ?**
-- [*] Oui
+- [x] Oui
 - [ ] Non 
-(mettre l'étoile dans la case correspondante)
+(mettre une croix dans la case correspondante)
 
 **Explication du problème**
 Explication simple dudit problème
