@@ -13,10 +13,10 @@ DactyloLibre est utilisable en soi. Cependant, il n'en est qu'à sa première ve
 #### Démonstration
 Ces images sont une démonstration et ne sont pas forcément à jour par rapport au code source (les images ne semblent pas apparaîtres sur les pages)
 
-![gif](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/tree/master/demo/demo.gif)
 
-![png](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/tree/master/demo/demo.png)
-
+ | <img src="demo/demo.gif" width="500"/> | <img src="demo/demo.png" width="500"/> |
+ | -------------------------------------- | -------------------------------------- |
+ 
 #### Si vous avez des questions
 - [Vous pouvez les poster ici](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/question)
 
