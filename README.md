@@ -4,9 +4,6 @@ Ce petit logiciel vous permetra de vous entrainer à la dactylographie gratuitem
 #### Qu'en est il ?
 * En cours de développement...
 
-#### Téléchargement
-- [DactyloLibre Alpha 1 (EXE non signé) ](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0/DactyloLibre.exe)
-
 #### Si vous avez des questions
 - [Vous pouvez les poster ici](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/question)
 
