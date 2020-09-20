@@ -3,6 +3,7 @@ Ce petit logiciel vous permetra de vous entrainer à la dactylographie gratuitem
 
 #### Qu'en est il ?
 * En cours de développement...
+  * [Voir on en est le projet](https://trello.com/b/3WzdA8G9)
 
 #### Si vous avez des questions
 - [Vous pouvez les poster ici](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/question)
