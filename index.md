@@ -15,11 +15,11 @@ Ces images sont une démonstration et ne sont pas forcément à jour par rapport
 ![png](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/tree/master/demo/demo.png)
 
 #### Si vous avez des questions
-- [Vous pouvez les poster ici](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/issues)
+- [Vous pouvez les poster ici](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/question)
 
 #### Les aides suivantes sont les bienvenues
-* Conseils d'améliorations
-* [Signalements de bugs](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/issues)
+* [Conseils d'améliorations](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/issues/new/choose)
+* [Signalements de bugs](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/bug)
 * [Aide dans la conception](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/pulls)
   * Média
     * Images (PNG)
