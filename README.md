@@ -17,6 +17,7 @@ Ce petit logiciel vous permetra de vous entrainer à la dactylographie gratuitem
   * Média
     * Images (PNG)
     * Sons (je ne sais pas encore)
+    * [Création/Modification du wiki](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/wiki)
   * Code avec éxplications (pour me permettre de comprendre et aussi apprendre)
     * Proposition de code à implémenter
     * Correction de bugs
