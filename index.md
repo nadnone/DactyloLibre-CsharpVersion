@@ -5,6 +5,7 @@ réécriture en C# de l'original [DactyloLibre](https://github.com/spoutnik911/D
 DactyloLibre est utilisable en soi. Cependant, il n'en est qu'à sa première version de teste, je reste dans ce sens ouvert à des améliorations, questions, critiques.
 
 #### Téléchargement
+
  | Version                  | Lien                                                                                                              |
  |  ----------------------- | ----------------------------------------------------------------------------------------------------------------- |
  | DactyloLibre Alpha 1.0   | [EXE non signé](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0/DactyloLibre.exe) |
