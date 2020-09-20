@@ -1,1 +1,4 @@
 theme: jekyll-theme-minimal
+title: "DactyloLibre"
+description: "Ce petit logiciel vous permetra de vous entrainer à la dactylographie gratuitement."
+show_downloads: "true"
