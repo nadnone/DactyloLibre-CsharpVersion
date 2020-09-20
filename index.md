@@ -25,6 +25,10 @@ Cette image est une démonstration et n'est pas forcément à jour par rapport a
 * [Aide dans la conception](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/pulls)
   * Média
     * Images (PNG)
+      1. Logo pour la page du projet
+      2. Logo pour l'exécutable
+      3. ... à vous de proposer
+    * Propositions de couleurs pour l'interface
     * Sons (je ne sais pas encore)
     * [Création/Modification du wiki](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/wiki)
   * Code avec éxplications (pour me permettre de comprendre et aussi apprendre)
