@@ -34,14 +34,10 @@
 		<Label Content="Temps" Grid.Row="1" Grid.Column="3" FontSize="18" Foreground="White" VerticalContentAlignment="Center"/>
 		<Label x:Name="timerShow" Content="0" Grid.Row="1" Grid.Column="4" FontSize="18" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 		<Label x:Name="alertLabel" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" FontSize="18" FontWeight="Bold" Foreground="White" VerticalContentAlignment="Center"/>
-		<RichTextBox Background="#FF34495E" Grid.Row="2" Foreground="White" FontSize="42" Grid.ColumnSpan="9" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True">
-			<FlowDocument>
-				<Paragraph >
-                    <Run  x:Name="textPreview" Text=""/>
-				</Paragraph>
-			</FlowDocument>
-		</RichTextBox>
-		<Label x:Name="historyKeyPressed3" Grid.Row="3" Grid.Column="0" Margin="0,20" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        
+        <Label x:Name="textPreview" Background="#FF34495E" Grid.Row="2" Foreground="White" FontSize="42" Grid.ColumnSpan="9"/>
+        
+        <Label x:Name="historyKeyPressed3" Grid.Row="3" Grid.Column="0" Margin="0,20" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="historyKeyPressed2" Grid.Row="3" Grid.Column="1" Margin="0,20" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="historyKeyPressed1" Grid.Row="3" Grid.Column="2" Margin="0,20" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 

@@ -17,6 +17,8 @@ namespace DactyloLibre
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const int CHARTEXTMAXCOUT = 200;
+
         private Int16 charCount = 0;
         private Int16 fault = 0;
         private char letter = ' ';
@@ -26,9 +28,10 @@ namespace DactyloLibre
         private int timer_Count = 0;
         private DispatcherTimer dTimer;
         private string textAlertMessage = "";
-        private int nbCharText = 200;
+        private int nbCharText = CHARTEXTMAXCOUT;
         private bool playGame = false;
         private DispatcherTimer gameTimer;
+        private int alternater_time = 0;
 
         public MainWindow()
         {
@@ -63,7 +66,7 @@ namespace DactyloLibre
                 {
                     t += text2w[i];
                 }
-                textPreview.Text = t;
+                textPreview.Content = t;
 
             }
         }
@@ -104,11 +107,11 @@ namespace DactyloLibre
             Queue<char> vQueue = new Queue<char> { };
 
             vQueue.Enqueue(lastletter);
-            if (textPreview.Text.Length < 3) return;
+            if (((string)textPreview.Content).Length < 3) return;
 
             for(int i = 0; i < 2; i++)
             {
-                vQueue.Enqueue(textPreview.Text[i]);
+                vQueue.Enqueue(((string)textPreview.Content)[i]);
             }
 
             if (vQueue.Count > 3) vQueue.Dequeue();
@@ -135,6 +138,15 @@ namespace DactyloLibre
 
         private void stopGame()
         {
+            playGame = false;
+            gameTimer.Stop();
+
+            ResultatTreatment rslt = new ResultatTreatment();
+            if (rslt.appendStats(nameUser.Text, charCount, fault, timer_Count))
+            {
+                MessageBox.Show("Une erreur est survenue lors de l'enregistrement des informations du jeu");
+            }
+
             historyKeyPressed1.Content = "";
             historyKeyPressed2.Content = "";
             historyKeyPressed3.Content = "";
@@ -143,17 +155,21 @@ namespace DactyloLibre
             historyKeyToPressed3.Content = "";
             previewError.Content = "";
             historyLetters.Clear();
-            textPreview.Text = "";
+            textPreview.Content = "";
+            charCount = 0;
+            fault = 0;
+            timer_Count = 0;
+            nbCharText = CHARTEXTMAXCOUT;
+            timerShow.Content = 0;
+            showKeyPressed.Text = null;
+            charachterCount.Content = "Caractères  ";
+            reloadText();
 
-            playGame = false;
             textAlertMessage = "Partie terminée !";
             dTimer.Start();
 
 
-            ResultatTreatment rslt = new ResultatTreatment();
-            if (rslt.appendStats(nameUser.Text, charCount, fault, timer_Count)) {
-                MessageBox.Show("Une erreur est survenue lors de l'enregistrement des informations du jeu");
-            }
+            
 
             new Stats().Show();
 
@@ -161,11 +177,11 @@ namespace DactyloLibre
 
         private void keyDown(object sender, TextChangedEventArgs e)
         {
-            if (showKeyPressed.Text.Length < 1) return;
+            if (!playGame || showKeyPressed.Text.Length < 1) return;
 
             letter = showKeyPressed.Text[0];
 
-            if (!playGame || nbCharText < 1)
+            if (nbCharText < 1)
             {
                 // Game finished
                 stopGame();
@@ -175,7 +191,7 @@ namespace DactyloLibre
             showKeyPressed.Text = Convert.ToString(letter);
 
 
-            if (textPreview.Text[0] == letter)
+            if (((string)textPreview.Content)[0] == letter)
             {
                 charachterCount.Content = "Caractères  " + ++charCount;
                 previewError.Foreground = new SolidColorBrush(Colors.Green);
@@ -235,7 +251,7 @@ namespace DactyloLibre
 
         private void dTimerTick_AlertAlternate(Object sender, EventArgs e)
         {
-            if (++timer_Count % 2 > 0)
+            if (++alternater_time % 2 > 0)
             {
                 alertLabel.Content = textAlertMessage;
             }
@@ -244,9 +260,9 @@ namespace DactyloLibre
                 alertLabel.Content = "";
             }
 
-            if (timer_Count >= timerAlternate_nbTime)
+            if (alternater_time >= timerAlternate_nbTime)
             {
-                timer_Count = 0;
+                alternater_time = 0;
                 dTimer.IsEnabled = false;
             }
 
@@ -308,11 +324,15 @@ namespace DactyloLibre
                 textAlertMessage = "Donnez un nom !";
                 dTimer.Start();
             }
-            else
+            else if(playGame)
             {
                 alertLabel.Foreground = Brushes.Red;
                 textAlertMessage = "Une partie est déjà lancée !";
                 dTimer.Start();
+            }
+            else
+            {
+                MessageBox.Show("Ce n'était pas prévu, désolé");
             }
             
         }
