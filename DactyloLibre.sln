@@ -5,12 +5,6 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DactyloLibre", "DactyloLibre\DactyloLibre.csproj", "{98837E15-7FE4-430A-A5C4-A1AA586BA147}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{DC98124C-EFB5-468E-815A-4ABF849507F3}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\Nadir\Documents\ShareX\Screenshots\2020-09\demo.gif = C:\Users\Nadir\Documents\ShareX\Screenshots\2020-09\demo.gif
-		C:\Users\Nadir\Pictures\Screenshots\demo.png = C:\Users\Nadir\Pictures\Screenshots\demo.png
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
