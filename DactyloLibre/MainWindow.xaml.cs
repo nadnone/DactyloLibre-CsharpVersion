@@ -336,5 +336,10 @@ namespace DactyloLibre
             }
             
         }
+
+        private void onClosed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

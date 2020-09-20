@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DactyloLibre"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1024" FontFamily="Calibri" Background="#FF24252A">
+        Title="DactyloLibre" Height="800" Width="1024" FontFamily="Calibri" Background="#FF24252A" Closed="onClosed">
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="5*"/>

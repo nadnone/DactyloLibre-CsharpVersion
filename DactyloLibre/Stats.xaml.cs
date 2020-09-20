@@ -27,7 +27,7 @@ namespace DactyloLibre
             public double vitesse { get; set; }
             public int scores { get; set; }
             public int fautes { get; set; }
-            public int temps { get; set; }
+            public string temps { get; set; }
         }
 
         public Stats()
@@ -54,12 +54,13 @@ namespace DactyloLibre
                     List<string> list = listStats[i];
 
 
-                    itemList.Add(new itemForList{
+                    itemList.Add(new itemForList
+                    {
                         noms = list[0],
                         scores = Convert.ToInt32(list[1]),
-                        vitesse = (double)(Convert.ToInt32(list[1]) / (Convert.ToInt32(list[3]) <= 0 ? 1: Convert.ToInt32(list[3]))),
+                        vitesse = (double)(Convert.ToInt32(list[1]) / (Convert.ToInt32(list[3]) <= 0 ? 1 : Convert.ToInt32(list[3]))),
                         fautes = Convert.ToInt32(list[2]),
-                        temps = Convert.ToInt32(list[3])
+                        temps = Convert.ToInt32(list[3]) / 60 + "min " + Convert.ToInt32(list[3]) % 60 + "s"
                     });
 
                 }
