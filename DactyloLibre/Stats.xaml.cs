@@ -59,7 +59,7 @@ namespace DactyloLibre
             {
                 List<itemForList> itemList = new List<itemForList> { };
 
-                for (int i = listStats.Count-1; i > 0;  i--)
+                for (int i = listStats.Count-1; i >= 0;  i--)
                 {
                     List<string> list = listStats[i];
 
@@ -69,7 +69,7 @@ namespace DactyloLibre
                     {
                         noms = list[0],
                         scores = Convert.ToInt32(list[1]),
-                        vitesse = (decimal)(Convert.ToDecimal(list[1]) / (timeDelta/1000)),
+                        vitesse = (decimal)(Convert.ToDecimal(list[1]) / (timeDelta/1000 == 0 ? 1 : timeDelta/1000)),
                         fautes = Convert.ToInt32(list[2]),
                         temps = timeDelta / 60000 + "min " + timeDelta / 1000 + "s " + timeDelta % 1000 + "ms"
                     });
