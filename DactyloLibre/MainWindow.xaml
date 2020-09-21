@@ -26,12 +26,12 @@
 			<ColumnDefinition Width="10*"/>
 			<ColumnDefinition Width="10*"/>
 		</Grid.ColumnDefinitions>
-        <Button Content="A propos" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="18" ClickMode="Press" BorderBrush="{x:Null}" Background="White" Click="aboutClick"/>
-        <Button Content="importer text" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Background="White" Click="importTextButton" ClickMode="Press"/>
-        <TextBox VerticalContentAlignment="Center" Margin="10,0" x:Name="nameUser" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" Text="Tapez votre nom ici"/>
-        <Button Content="Lancer !" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Background="White" Click="playDactylo" ClickMode="Press"/>
-		<Label x:Name="charachterCount" Content="Caractères" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="18" Foreground="White" VerticalContentAlignment="Center"/>
-		<Label Content="Temps" Grid.Row="1" Grid.Column="3" FontSize="18" Foreground="White" VerticalContentAlignment="Center"/>
+        <Button x:Name="aboutButton" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="18" ClickMode="Press" BorderBrush="{x:Null}" Background="White" Click="aboutClick"/>
+        <Button x:Name="importTextBtn_obj" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Background="White" Click="importTextButton" ClickMode="Press"/>
+        <TextBox VerticalContentAlignment="Center" Margin="10,0" x:Name="nameTextbox" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"/>
+        <Button x:Name="launchButten" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Background="White" Click="playDactylo" ClickMode="Press"/>
+		<Label x:Name="charachterCount" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="18" Foreground="White" VerticalContentAlignment="Center"/>
+		<Label x:Name="timeLabel" Grid.Row="1" Grid.Column="3" FontSize="18" Foreground="White" VerticalContentAlignment="Center"/>
 		<Label x:Name="timerShow" Content="0" Grid.Row="1" Grid.Column="4" FontSize="18" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 		<Label x:Name="alertLabel" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" FontSize="18" FontWeight="Bold" Foreground="White" VerticalContentAlignment="Center"/>
         
@@ -42,7 +42,7 @@
         <Label x:Name="historyKeyPressed1" Grid.Row="3" Grid.Column="2" Margin="0,20" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
         <TextBox MaxLength="1" x:Name="showKeyPressed" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="1" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" TextChanged="keyDown"/>
-        <Image Grid.Row="3" Grid.Column="4" Source="/img/Dactylolibre_Info.png"/>
+        <Image x:Name="imageInstruction" Grid.Row="3" Grid.Column="4"/>
         <Label x:Name="previewError" Grid.Row="3" Grid.Column="5" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
         <Label x:Name="historyKeyToPressed1" Grid.Row="3" Grid.Column="6" Margin="0,20" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>

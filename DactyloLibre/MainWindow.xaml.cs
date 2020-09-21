@@ -3,12 +3,22 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using IniParser;
+using IniParser.Model;
+using DactyloLibre.classes;
+using System.Runtime;
+using System.Windows.Media.Imaging;
+using System.Security.Policy;
 
 namespace DactyloLibre
 {
@@ -32,6 +42,8 @@ namespace DactyloLibre
         private bool playGame = false;
         private DispatcherTimer gameTimer;
         private int alternater_time = 0;
+        private long time_start = 0;
+        private Lang_parser langparser = new Lang_parser();
 
         public MainWindow()
         {
@@ -44,6 +56,16 @@ namespace DactyloLibre
             gameTimer = new DispatcherTimer();
             gameTimer.Tick += new EventHandler(gameTime_tick);
             gameTimer.Interval = new TimeSpan(0, 0, 1);
+
+
+            aboutButton.Content = langparser.finder()["Buttons"]["about"];
+            importTextBtn_obj.Content = langparser.finder()["Buttons"]["import"];
+            launchButten.Content = langparser.finder()["Buttons"]["launch"];
+            nameTextbox.Text = langparser.finder()["textbox"]["name"];
+            timeLabel.Content = langparser.finder()["Label"]["time"];
+            charachterCount.Content = langparser.finder()["Label"]["characters"];
+
+            imageInstruction.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory()+".\\res\\"+langparser.finder()["Image"]["ImgInstructionName"] +".png"));
         }
         
         private void gameTime_tick(Object sender, EventArgs e)
@@ -141,10 +163,12 @@ namespace DactyloLibre
             playGame = false;
             gameTimer.Stop();
 
+            long time_finished = DateTimeOffset.Now.ToUnixTimeMilliseconds();            
+
             ResultatTreatment rslt = new ResultatTreatment();
-            if (rslt.appendStats(nameUser.Text, charCount, fault, timer_Count))
+            if (rslt.appendStats(nameTextbox.Text, charCount, fault, time_start, time_finished))
             {
-                MessageBox.Show("Une erreur est survenue lors de l'enregistrement des informations du jeu");
+                MessageBox.Show(langparser.finder()["Error"]["saveError"]);
             }
 
             historyKeyPressed1.Content = "";
@@ -162,10 +186,10 @@ namespace DactyloLibre
             nbCharText = CHARTEXTMAXCOUT;
             timerShow.Content = 0;
             showKeyPressed.Text = null;
-            charachterCount.Content = "Caractères  ";
+            charachterCount.Content = langparser.finder()["characters"]["characters"] + " ";
             reloadText();
 
-            textAlertMessage = "Partie terminée !";
+            textAlertMessage = langparser.finder()["Alert"]["gameOver"];
             dTimer.Start();
 
 
@@ -193,7 +217,7 @@ namespace DactyloLibre
 
             if (((string)textPreview.Content)[0] == letter)
             {
-                charachterCount.Content = "Caractères  " + ++charCount;
+                charachterCount.Content = langparser.finder()["Label"]["characters"] + " " + ++charCount;
                 previewError.Foreground = new SolidColorBrush(Colors.Green);
                 previewError.Content = letter;
                 reloadText();
@@ -211,7 +235,7 @@ namespace DactyloLibre
 
         private void aboutClick(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/spoutnik911/DactyloLibre-CsharpVersion");
+            System.Diagnostics.Process.Start("https://spoutnik911.github.io/DactyloLibre-CsharpVersion/");
         }
 
         private List<String> LoadText()
@@ -244,7 +268,7 @@ namespace DactyloLibre
             }
             else
             {
-                MessageBox.Show("Ce ficheir n'existe pas ou plus.");
+                MessageBox.Show(langparser.finder()["Error"]["FileUnreadable"]);
                 return new List<String> { };
             }
         }
@@ -284,13 +308,13 @@ namespace DactyloLibre
                 if (File.Exists(textPath))
                 {
                     alertLabel.Foreground = Brushes.Green;
-                    textAlertMessage = "Fichier importé !";
+                    textAlertMessage = langparser.finder()["Alert"]["fileLoaded"];
                     dTimer.Start();
                 }
                 else
                 {
                     alertLabel.Foreground = Brushes.Red;
-                    textAlertMessage = "Erreur, fichier inéxistant.";
+                    textAlertMessage = langparser.finder()["Alert"]["fileMissing"];
                     dTimer.Start();
                 }
 
@@ -301,38 +325,48 @@ namespace DactyloLibre
 
         private void playDactylo(object sender, RoutedEventArgs e)
         {
-            if (!playGame && File.Exists(textPath) && nameUser.Text != "Tapez votre nom ici")
+            if (!playGame && File.Exists(textPath) && nameTextbox.Text != langparser.finder()["textbox"]["name"])
             {
+                time_start = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+
                 alertLabel.Foreground = Brushes.Green;
-                textAlertMessage = "Partie lancée, le temps est compté !";
+                textAlertMessage = langparser.finder()["Alert"]["TimerStarted"];
                 dTimer.Start();
 
                 gameTimer.Start();
 
+                launchButten.Content = langparser.finder()["Buttons"]["stop"];
+
                 playGame = true;
                 reloadText();
+            }
+            else if((string)launchButten.Content == langparser.finder()["Buttons"]["stop"] && playGame)
+            {
+                stopGame();
             }
             else if (!File.Exists(textPath))
             {
                 alertLabel.Foreground = Brushes.Red;
-                textAlertMessage = "Fichier manquant !";
+                textAlertMessage = langparser.finder()["Alert"]["fileMissing"];
                 dTimer.Start();
             }
-            else if(nameUser.Text == "Tapez votre nom ici")
+            else if(nameTextbox.Text == langparser.finder()["textbox"]["name"])
             {
                 alertLabel.Foreground = Brushes.Red;
-                textAlertMessage = "Donnez un nom !";
+                textAlertMessage = langparser.finder()["Alert"]["nameMissing"];
                 dTimer.Start();
             }
             else if(playGame)
             {
+                launchButten.Content = langparser.finder()["Buttons"]["stop"];
+
                 alertLabel.Foreground = Brushes.Red;
-                textAlertMessage = "Une partie est déjà lancée !";
+                textAlertMessage = langparser.finder()["Alert"]["gameAlreadyStarted"];
                 dTimer.Start();
             }
             else
             {
-                MessageBox.Show("Ce n'était pas prévu, désolé");
+                MessageBox.Show(langparser.finder()["Error"]["idontKnowButError"]);
             }
             
         }

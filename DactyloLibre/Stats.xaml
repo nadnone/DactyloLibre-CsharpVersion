@@ -9,11 +9,11 @@
     <Grid>
         <DataGrid x:Name="statsDataGrid" Background="#FF242424" AutoGenerateColumns="False" AlternatingRowBackground="#385E0F" RowBackground="#61B329" Foreground="Black" FontFamily="Calibri" FontSize="18">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Noms" Binding="{Binding noms}" Width="25*"/>
-                <DataGridTextColumn Header="Vitesse [c/s]" Binding="{Binding vitesse}" Width="25*"/>
-                <DataGridTextColumn Header="Scores" Binding="{Binding scores}" Width="25*"/>
-                <DataGridTextColumn Header="Fautes" Binding="{Binding fautes}" Width="25*"/>
-                <DataGridTextColumn Header="Temps" Binding="{Binding temps}" Width="25*"/>
+                <DataGridTextColumn x:Name="NamesHeader"  Binding="{Binding noms}" Width="25*"/>
+                <DataGridTextColumn x:Name="speedsHeader" Binding="{Binding vitesse}" Width="25*"/>
+                <DataGridTextColumn x:Name="scoresHeader" Binding="{Binding scores}" Width="25*"/>
+                <DataGridTextColumn x:Name="faultsHeader" Binding="{Binding fautes}" Width="25*"/>
+                <DataGridTextColumn x:Name="timesHeader"  Binding="{Binding temps}" Width="25*"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

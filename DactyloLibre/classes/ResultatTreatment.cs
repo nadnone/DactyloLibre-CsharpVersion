@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.IO;
 
+
 namespace DactyloLibre
 {
     class ResultatTreatment
@@ -21,18 +22,20 @@ namespace DactyloLibre
             List <List<string>> listStats = new List<List<string>> { };
             List<string> listValues = new List<string> { };
             
-            string[] values = new string[4];
+            string[] values = new string[5];
             string read = "";
 
             while ((read = sr.ReadLine()) != null)
             {
-
+               
                 values = read.Split(',');
+                if (values.Length < 5) return new List<List<string>> { };
 
                 listValues.Add(values[0]);
                 listValues.Add(values[1]);
                 listValues.Add(values[2]);
                 listValues.Add(values[3]);
+                listValues.Add(values[4]);
 
                 listStats.Add(listValues);
                 listValues = new List<string> { };
@@ -41,11 +44,12 @@ namespace DactyloLibre
             return listStats;
         }
 
-        public bool appendStats(string name, int c, int fault, int time)
+        public bool appendStats(string name, int c, int fault, long timeS, long timeF)
         {
 
             name = name.Replace(",", ".");
-            string text = (name + "," + c + "," + fault + "," + time);
+
+            string text = name + "," + c + "," + fault + "," + timeS + "," + timeF;
 
             try
             {
