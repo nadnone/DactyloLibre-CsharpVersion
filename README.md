@@ -1,14 +1,6 @@
 ### What about it 
 DactyloLibre ist usable However, it is its first time testing version, I'm open for advices, improvement, suggestions. evaluation. etc..
 
-#### Téléchargement
-
- | Versions                 | Liens                                                                                                              |
- |  ----------------------- | ----------------------------------------------------------------------------------------------------------------- |
- | DactyloLibre Alpha 1.0.2 | [EXE non not signed (zip)](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0.2/DactyloLibre.Alpha.1.0.2.zip) |
- | DactyloLibre Alpha 1.0.1   | [EXE non not signed (zip)](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0.1/DactyloLibre.Alpha.1.0.1.zip) |
- | DactyloLibre Alpha 1.0   | [[EXE non not signed (zip)](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0/DactyloLibre.exe) |
-
 #### Demo
 This picture is only a demo, this is not necessary the currenct code source
   <img src="demo/demo.gif" width="100%"/> 
