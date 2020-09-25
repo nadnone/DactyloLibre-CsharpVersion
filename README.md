@@ -2,8 +2,7 @@
 Ce petit logiciel vous permetra de vous entrainer à la dactylographie gratuitement. Ce logiciel est une réécriture de l'original [DactyloLibre](https://github.com/spoutnik911/DactyloLibre) en C#
 
 #### Qu'en est il ?
-* En cours de développement...
-  * [Voir on en est le projet](https://trello.com/b/3WzdA8G9)
+  * [Voir où en est le projet](https://trello.com/b/3WzdA8G9)
 
 #### Si vous avez des questions
 - [Vous pouvez les poster ici](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/question)
@@ -23,6 +22,7 @@ Ce petit logiciel vous permetra de vous entrainer à la dactylographie gratuitem
   * Code avec éxplications (pour me permettre de comprendre et aussi apprendre)
     * Proposition de code à implémenter
     * Correction de bugs
+  * [Traductions](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/tree/master/bin_res)
 
 #### Démonstration
 Ces images sont une démonstration et ne sont pas forcément à jour par rapport au code source
