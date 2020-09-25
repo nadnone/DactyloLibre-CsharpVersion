@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using IniParser;
 using IniParser.Model;
+using Newtonsoft.Json;
+using DactyloLibre.Models;
 
 namespace DactyloLibre.classes
 {
@@ -14,21 +16,20 @@ namespace DactyloLibre.classes
     {
         private string langPath = ".\\language_config.ini";
 
-        class LangData
-        {
-            
-        }
-        public IniData finder()
+        public dynamic finder()
         {
             if (!File.Exists(langPath)) MessageBox.Show("language files are missing, please reinstall the software correctly");
-
+         
             var parser = new FileIniDataParser();
             IniData data = parser.ReadFile(langPath, Encoding.UTF8);
             string langDataPath = data["config"]["LanguageFile"];
 
-           data = parser.ReadFile(".\\"+langDataPath);
+            if (!File.Exists(langDataPath)) MessageBox.Show("language files are missing, please reinstall the software correctly");
 
-            return data;
+            StreamReader sr = new StreamReader(langDataPath);
+            string jsonText = sr.ReadToEnd();
+
+            return JsonConvert.DeserializeObject<LangParserObjects.Rootobject>(jsonText);
         }
     }
 }

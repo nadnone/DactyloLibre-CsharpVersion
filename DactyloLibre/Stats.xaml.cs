@@ -38,11 +38,11 @@ namespace DactyloLibre
         public Stats()
         {
             InitializeComponent();
-            NamesHeader.Header = langparser.finder()["table_headers"]["names"];
-            speedsHeader.Header = langparser.finder()["table_headers"]["speeds"];
-            scoresHeader.Header = langparser.finder()["table_headers"]["scores"];
-            faultsHeader.Header = langparser.finder()["table_headers"]["faults"];
-            timesHeader.Header = langparser.finder()["table_headers"]["times"];
+            NamesHeader.Header = langparser.finder().Table_headers.names;
+            speedsHeader.Header = langparser.finder().Table_headers.speeds;
+            scoresHeader.Header = langparser.finder().Table_headers.scores;
+            faultsHeader.Header = langparser.finder().Table_headers.faults;
+            timesHeader.Header = langparser.finder().Table_headers.times;
         }
 
         private void loadedpage(object sender, RoutedEventArgs e)
@@ -53,7 +53,7 @@ namespace DactyloLibre
 
             if (listStats.Count < 1)
             {
-                MessageBox.Show(langparser.finder()["Error"]["FileUnreadable"]);
+                MessageBox.Show(langparser.finder().Error.FileUnreadable);
             }
             else
             {

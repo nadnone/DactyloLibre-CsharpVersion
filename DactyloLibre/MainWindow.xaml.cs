@@ -19,6 +19,7 @@ using DactyloLibre.classes;
 using System.Runtime;
 using System.Windows.Media.Imaging;
 using System.Security.Policy;
+using DactyloLibre.Models;
 
 namespace DactyloLibre
 {
@@ -57,16 +58,17 @@ namespace DactyloLibre
             gameTimer.Tick += new EventHandler(gameTime_tick);
             gameTimer.Interval = new TimeSpan(0, 0, 1);
 
+        
+            aboutButton.Content = langparser.finder().Buttons.about;
+            importTextBtn_obj.Content = langparser.finder().Buttons.import;
+            launchButten.Content = langparser.finder().Buttons.launch;
+            nameTextbox.Text = langparser.finder().Textbox.name;
+            timeLabel.Content = langparser.finder().Label.time;
+            charachterCount.Content = langparser.finder().Label.characters;
 
-            aboutButton.Content = langparser.finder()["Buttons"]["about"];
-            importTextBtn_obj.Content = langparser.finder()["Buttons"]["import"];
-            launchButten.Content = langparser.finder()["Buttons"]["launch"];
-            nameTextbox.Text = langparser.finder()["textbox"]["name"];
-            timeLabel.Content = langparser.finder()["Label"]["time"];
-            charachterCount.Content = langparser.finder()["Label"]["characters"];
+            imageInstruction.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory()+".\\res\\"+langparser.finder().Image.ImgInstructionName +".png"));
 
-            imageInstruction.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory()+".\\res\\"+langparser.finder()["Image"]["ImgInstructionName"] +".png"));
-        }
+            }
         
         private void gameTime_tick(Object sender, EventArgs e)
         {
@@ -168,7 +170,7 @@ namespace DactyloLibre
             ResultatTreatment rslt = new ResultatTreatment();
             if (rslt.appendStats(nameTextbox.Text, charCount, fault, time_start, time_finished))
             {
-                MessageBox.Show(langparser.finder()["Error"]["saveError"]);
+                MessageBox.Show(langparser.finder().Error.saveError);
             }
 
             historyKeyPressed1.Content = "";
@@ -186,10 +188,10 @@ namespace DactyloLibre
             nbCharText = CHARTEXTMAXCOUT;
             timerShow.Content = 0;
             showKeyPressed.Text = null;
-            charachterCount.Content = langparser.finder()["characters"]["characters"] + " ";
+            charachterCount.Content = langparser.finder().Label.characters + " ";
             reloadText();
 
-            textAlertMessage = langparser.finder()["Alert"]["gameOver"];
+            textAlertMessage = langparser.finder().Alert.gameOver;
             dTimer.Start();
 
 
@@ -217,7 +219,7 @@ namespace DactyloLibre
 
             if (((string)textPreview.Content)[0] == letter)
             {
-                charachterCount.Content = langparser.finder()["Label"]["characters"] + " " + ++charCount;
+                charachterCount.Content = langparser.finder().Label.characters + " " + ++charCount;
                 previewError.Foreground = new SolidColorBrush(Colors.Green);
                 previewError.Content = letter;
                 reloadText();
@@ -268,7 +270,7 @@ namespace DactyloLibre
             }
             else
             {
-                MessageBox.Show(langparser.finder()["Error"]["FileUnreadable"]);
+                MessageBox.Show(langparser.finder().Error.FileUnreadable);
                 return new List<String> { };
             }
         }
@@ -308,13 +310,13 @@ namespace DactyloLibre
                 if (File.Exists(textPath))
                 {
                     alertLabel.Foreground = Brushes.Green;
-                    textAlertMessage = langparser.finder()["Alert"]["fileLoaded"];
+                    textAlertMessage = langparser.finder().Alert.fileLoaded;
                     dTimer.Start();
                 }
                 else
                 {
                     alertLabel.Foreground = Brushes.Red;
-                    textAlertMessage = langparser.finder()["Alert"]["fileMissing"];
+                    textAlertMessage = langparser.finder().Alert.fileMissing;
                     dTimer.Start();
                 }
 
@@ -325,48 +327,48 @@ namespace DactyloLibre
 
         private void playDactylo(object sender, RoutedEventArgs e)
         {
-            if (!playGame && File.Exists(textPath) && nameTextbox.Text != langparser.finder()["textbox"]["name"])
+            if (!playGame && File.Exists(textPath) && nameTextbox.Text != langparser.finder().Textbox.name)
             {
                 time_start = DateTimeOffset.Now.ToUnixTimeMilliseconds();
 
                 alertLabel.Foreground = Brushes.Green;
-                textAlertMessage = langparser.finder()["Alert"]["TimerStarted"];
+                textAlertMessage = langparser.finder().Alert.TimerStarted;
                 dTimer.Start();
 
                 gameTimer.Start();
 
-                launchButten.Content = langparser.finder()["Buttons"]["stop"];
+                launchButten.Content = langparser.finder().Buttons.stop;
 
                 playGame = true;
                 reloadText();
             }
-            else if((string)launchButten.Content == langparser.finder()["Buttons"]["stop"] && playGame)
+            else if((string)launchButten.Content == langparser.finder().Buttons.stop && playGame)
             {
                 stopGame();
             }
             else if (!File.Exists(textPath))
             {
                 alertLabel.Foreground = Brushes.Red;
-                textAlertMessage = langparser.finder()["Alert"]["fileMissing"];
+                textAlertMessage = langparser.finder().Alert.fileMissing;
                 dTimer.Start();
             }
-            else if(nameTextbox.Text == langparser.finder()["textbox"]["name"])
+            else if(nameTextbox.Text == langparser.finder().textbox.name)
             {
                 alertLabel.Foreground = Brushes.Red;
-                textAlertMessage = langparser.finder()["Alert"]["nameMissing"];
+                textAlertMessage = langparser.finder().Alert.nameMissing;
                 dTimer.Start();
             }
             else if(playGame)
             {
-                launchButten.Content = langparser.finder()["Buttons"]["stop"];
+                launchButten.Content = langparser.finder().Buttons.stop;
 
                 alertLabel.Foreground = Brushes.Red;
-                textAlertMessage = langparser.finder()["Alert"]["gameAlreadyStarted"];
+                textAlertMessage = langparser.finder().Alert.gameAlreadyStarted;
                 dTimer.Start();
             }
             else
             {
-                MessageBox.Show(langparser.finder()["Error"]["idontKnowButError"]);
+                MessageBox.Show(langparser.finder().Error.idontKnowButError);
             }
             
         }
