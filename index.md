@@ -1,37 +1,37 @@
-### Qu'en est il ?
-DactyloLibre est utilisable en soi. Cependant, il n'en est qu'à sa première version de teste, je reste dans ce sens ouvert à des améliorations, questions, critiques.
+### What about it 
+DactyloLibre ist usable However, it is its first time testing version, I'm open for advices, improvement, suggestions. evaluation. etc..
 
 #### Téléchargement
 
  | Versions                 | Liens                                                                                                              |
  |  ----------------------- | ----------------------------------------------------------------------------------------------------------------- |
- | DactyloLibre Alpha 1.0.1   | [EXE non signé (zip)](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0.1/DactyloLibre.Alpha.1.0.1.zip) |
- | DactyloLibre Alpha 1.0   | [EXE non signé](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0/DactyloLibre.exe) |
+ | DactyloLibre Alpha 1.0.2 | [EXE non not signed (zip)](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0.2/DactyloLibre.Alpha.1.0.2.zip) |
+ | DactyloLibre Alpha 1.0.1   | [EXE non not signed (zip)](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0.1/DactyloLibre.Alpha.1.0.1.zip) |
+ | DactyloLibre Alpha 1.0   | [[EXE non not signed (zip)](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0/DactyloLibre.exe) |
 
-#### Démonstration
-Cette image est une démonstration et n'est pas forcément à jour par rapport au code source
-
+#### Demo
+This picture is only a demo, this is not necessary the currenct code source
   <img src="demo/demo.gif" width="100%"/> 
  
-#### Si vous avez des questions
-- [Vous pouvez les poster ici](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/question)
+#### Question ?
+- [You can post it there](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/question)
 
-#### Les aides suivantes sont les bienvenues
-* [Conseils d'améliorations](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/enhancement)
-* [Signalements de bugs](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/bug)
-* [Aide dans la conception](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/pulls)
-  * Média
+#### The next help are welcome
+* [Improvement advices](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/enhancement)
+* [Bugs repports](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/bug)
+* [Creations helps](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/pulls)
+  * Media
     * Images (PNG)
-      1. Logo pour la page du projet
-      2. Logo pour l'exécutable
-      3. ... à vous de proposer
-    * Propositions de couleurs pour l'interface
-    * Sons (je ne sais pas encore)
-    * [Création/Modification du wiki](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/wiki)
-  * Code avec éxplications (pour me permettre de comprendre et aussi apprendre)
-    * Proposition de code à implémenter
-    * Correction de bugs
-    * [Traductions](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/tree/master/bin_res)
+      1. Logo for the project webpage
+      2. Logo for the exe
+      3. ... what else ?
+    * Colors advises for the user interface
+    * Sound (I don't know)
+    * [Create, edit the wiki](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/wiki)
+  * Code with explainations (for understanding and improving myself)
+    * Code implementation suggestions
+    * Debug
+    * [Translations](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/tree/master/bin_res)
 
-#### Autre
-Pour plus d'informations rendez vous sur la page Github du projet :)
+#### Other
+More information in the github page of the project :)
