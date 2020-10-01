@@ -1,8 +1,8 @@
 ### What about it 
-DactyloLibre ist usable However, it is its first time testing version, I'm open for advices, improvement, suggestions. evaluation. etc..
+DactyloLibre is usable. However, it is its first time testing version, I'm open for advices, improvement, suggestions. evaluation. etc..
 
 #### Demo
-This picture is only a demo, this is not necessary the currenct code source
+This picture is only a demo, this is not necessary the current code source
   <img src="demo/demo.gif" width="100%"/> 
  
 #### Question ?
@@ -20,7 +20,7 @@ This picture is only a demo, this is not necessary the currenct code source
     * Colors advises for the user interface
     * Sound (I don't know)
     * [Create, edit the wiki](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/wiki)
-  * Code with explainations (for understanding and improving myself)
+  * Code with explanations (for understanding and improving myself)
     * Code implementation suggestions
     * Debug
     * [Translations](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/tree/master/bin_res)
