@@ -1,3 +1,5 @@
+<img src="https://spoutnik911.github.io/DactyloLibre-CsharpVersion/DactyloLibreLogo.png" height="240" width="240"/>
+
 ### What about it 
 DactyloLibre is usable. However, it is its first time testing version, I'm open for advices, improvement, suggestions. evaluation. etc..
 
@@ -14,9 +16,8 @@ This picture is only a demo, this is not necessary the current code source
 * [Creations helps](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/pulls)
   * Media
     * Images (PNG)
-      1. Logo for the project webpage
-      2. Logo for the exe
-      3. ... what else ?
+      1. Screenshots ?
+      2. ... what else ?
     * Colors advises for the user interface
     * Sound (I don't know)
     * [Create, edit the wiki](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/wiki)
