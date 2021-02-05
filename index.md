@@ -5,6 +5,7 @@ DactyloLibre is usable. However, it is its first time testing version, I'm open 
 
  | Versions                 | Liens                                                                                                              |
  |  ----------------------- | ----------------------------------------------------------------------------------------------------------------- |
+ | DactyloLibre Alpha 1.0.2.1 | [EXE unsigned (zip)](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0.2.1/DactyloLibre.Alpha.1.0.2.1.zip) |
  | DactyloLibre Alpha 1.0.2 | [EXE unsigned (zip)](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0.2/DactyloLibre.Alpha.1.0.2.zip) |
  | DactyloLibre Alpha 1.0.1   | [EXE unsigned (zip)](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0.1/DactyloLibre.Alpha.1.0.1.zip) |
  | DactyloLibre Alpha 1.0   | [EXE unsigned](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/releases/download/1.0/DactyloLibre.exe) |
@@ -21,9 +22,7 @@ This picture is only a demo, this is not necessary the current code source
 * [Bugs repports](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/labels/bug)
 * [Creations helps](https://github.com/spoutnik911/DactyloLibre-CsharpVersion/pulls)
   * Media
-    * Images (PNG)
-      1. Logo for the project webpage
-      2. Logo for the exe
+    * Screenshots ?
       3. ... what else ?
     * Colors advises for the user interface
     * Sound (I don't know)
