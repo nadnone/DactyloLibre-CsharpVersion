@@ -3,4 +3,4 @@ title: "DactyloLibre"
 description: "This tiny software will help you to training your typing skills for free"
 source: "https://github.com/spoutnik911/DactyloLibre-CsharpVersion"
 logo: /DactyloLibreLogo.png
-show_downloads: true
+show_downloads: false
