@@ -1,5 +1,3 @@
-<img src="https://spoutnik911.github.io/DactyloLibre-CsharpVersion/DactyloLibreLogo.png" height="240" width="240"/>
-
 ### What about it 
 DactyloLibre is usable. However, it is its first time testing version, I'm open for advices, improvement, suggestions. evaluation. etc..
 
