@@ -5,13 +5,7 @@ DactyloLibre is usable. However, it is its first time testing version, I'm open 
 - [@kant](https://github.com/kant) for Spanish translations and English corrections
 
 ### Downloads
-
- | Versions                   | Liens                                                                                              |
- |  ------------------------- | -------------------------------------------------------------------------------------------------- |
- | DactyloLibre Alpha 1.0.2.1 | [EXE unsigned (zip)](https://github.com/nadnone/DactyloLibre-CsharpVersion/releases/1.0.2.1/)      |
- | DactyloLibre Alpha 1.0.2   | [EXE unsigned (zip)](https://github.com/nadnone/DactyloLibre-CsharpVersion/releases/1.0.2/)        |
- | DactyloLibre Alpha 1.0.1   | [EXE unsigned (zip)](https://github.com/nadnone/DactyloLibre-CsharpVersion/releases/1.0.1/)        |
- | DactyloLibre Alpha 1.0     | [EXE unsigned](https://github.com/nadnone/DactyloLibre-CsharpVersion/releases/1.0/)                |
+- [Releases there](https://github.com/nadnone/DactyloLibre-CsharpVersion/releases)
 
 ### Demo
 This picture is only a demo, this is not necessary the current code source
