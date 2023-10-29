@@ -55,7 +55,8 @@ namespace DactyloLibre
             timeLabel.Content = langparser.Finder().Label.Time;
             charachterCount.Content = langparser.Finder().Label.Characters;
 
-            imageInstruction.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory()+".\\res\\"+langparser.Finder().Image.ImgInstructionName +".png"));
+            label_prev.Content = "\n\n< " + langparser.Finder().Label.InfoPrev + "\n\n" + langparser.Finder().Label.InfoTypeArea + " >";
+
 
             }
         

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace DactyloLibre.Models
 {
     class LangParserObjects
@@ -17,7 +12,6 @@ namespace DactyloLibre.Models
             public Alert Alert { get; set; }
             public Error Error { get; set; }
             public Table_Headers Table_headers { get; set; }
-            public Image Image { get; set; }
         }
 
         public class Buttons
@@ -37,6 +31,8 @@ namespace DactyloLibre.Models
         {
             public string Characters { get; set; }
             public string Time { get; set; }
+            public string InfoPrev { get; set; }
+            public string InfoTypeArea { get; set; }
         }
 
         public class Alert
@@ -64,12 +60,7 @@ namespace DactyloLibre.Models
             public string Faults { get; set; }
             public string Times { get; set; }
         }
-
-        public class Image
-        {
-            public string ImgInstructionName { get; set; }
-            public string Comment { get; set; }
-        }
+ 
 
     }
 }

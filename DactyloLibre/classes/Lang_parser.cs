@@ -26,7 +26,7 @@ namespace DactyloLibre.classes
             IniData data = parser.ReadFile(LANGPATH, Encoding.UTF8);
             string langDataPath = data["config"]["LanguageFile"];
 
-            if (!File.Exists(langDataPath)) Error_quit("language files are missing, please reinstall the software correctly");
+            if (!File.Exists(langDataPath)) Error_quit("Selected language files are missing, please reinstall the software correctly");
 
             StreamReader sr = new StreamReader(langDataPath);
             string jsonText = sr.ReadToEnd();

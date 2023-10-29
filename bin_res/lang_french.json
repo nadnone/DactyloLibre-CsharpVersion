@@ -1,39 +1,38 @@
 {
     "Buttons":{
-        "about":"A propos",
-        "import": "Importer",
-        "launch": "Lancer !",
-        "stop": "Stop !"
+        "About":"A propos",
+        "Import": "Importer",
+        "Launch": "Lancer !",
+        "Stop": "Stop !"
     },
     "Textbox":{
-        "name": "Votre nom ici"
+        "Name": "Votre nom ici"
     },
     "Label": {
-        "characters": "Caractères",
-        "time": "Temps"
+        "Characters": "Caractères",
+        "Time": "Temps",
+        "InfoPrev": "Prévisualisation",
+        "InfoTypeArea": "Zone de Frappe"
     },
     "Alert":{
-        "fileMissing": "Fichier menquant !",
-        "nameMissing": "Donnez un nom!",
-        "fileLoaded": "Fichier importé !",
+        "FileMissing": "Fichier menquant !",
+        "NameMissing": "Donnez un nom!",
+        "FileLoaded": "Fichier importé !",
         "TimerStarted": "Le jeu est lancé, le temps est complé !",
-        "gameOver": "Partie terminée !",
-        "gameAlreadyStarted": "Une partie est déjà lancle !"
+        "GameOver": "Partie terminée !",
+        "GameAlreadyStarted": "Une partie est déjà lancle !"
     },
     "Error":{
         "FileUnreadable": "Fichier illisible ou introuvable",
-        "idontKnowButError": "Une erreur est survenue",
-        "saveError": "Une erreur est survenue lors de l'enregistrement des informations de jeu"
+        "UnknownError": "Une erreur est survenue",
+        "SaveError": "Une erreur est survenue lors de l'enregistrement des informations de jeu"
     },
     "Table_headers":{
-        "names": "Noms",
-        "speeds": "Vitesses [c/s]",
-        "scores": "Scores [Caractères]",
-        "faults": "Fautes [Caractères]",
-        "times": "Temps [min s ms]"
-    },
-    "Image":{
-        "ImgInstructionName": "info_instruction_fr",
-        "_comment": "only the file name on the res/ folder with png extension for ´ImgInstructionName´"
+        "Names": "Noms",
+        "Speeds": "Vitesses [c/s]",
+        "Scores": "Scores [Caractères]",
+        "Faults": "Fautes [Caractères]",
+        "Times": "Temps [min s ms]"
     }
+
 }
