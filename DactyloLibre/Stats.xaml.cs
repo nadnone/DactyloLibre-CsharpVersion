@@ -1,21 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Globalization;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using IniParser;
-using IniParser.Model;
+
 using DactyloLibre.classes;
 
 namespace DactyloLibre
@@ -26,38 +12,38 @@ namespace DactyloLibre
     public partial class Stats : Window
     {
         private Lang_parser langparser = new Lang_parser();
-        public class itemForList
+        public class ItemForList
         {
-            public string noms { get; set; }
-            public decimal vitesse { get; set; }
-            public int scores { get; set; }
-            public int fautes { get; set; }
-            public string temps { get; set; }
+            public string Noms { get; set; }
+            public decimal Vitesse { get; set; }
+            public int Scores { get; set; }
+            public int Fautes { get; set; }
+            public string Temps { get; set; }
         }
 
         public Stats()
         {
             InitializeComponent();
-            NamesHeader.Header = langparser.finder().Table_headers.names;
-            speedsHeader.Header = langparser.finder().Table_headers.speeds;
-            scoresHeader.Header = langparser.finder().Table_headers.scores;
-            faultsHeader.Header = langparser.finder().Table_headers.faults;
-            timesHeader.Header = langparser.finder().Table_headers.times;
+            NamesHeader.Header = langparser.Finder().Table_headers.Names;
+            speedsHeader.Header = langparser.Finder().Table_headers.Speeds;
+            scoresHeader.Header = langparser.Finder().Table_headers.Scores;
+            faultsHeader.Header = langparser.Finder().Table_headers.Faults;
+            timesHeader.Header = langparser.Finder().Table_headers.Times;
         }
 
-        private void loadedpage(object sender, RoutedEventArgs e)
+        private void Loadedpage(object sender, RoutedEventArgs e)
         {
             ResultatTreatment rslt = new ResultatTreatment();
-            List<List<string>> listStats = rslt.readStats();
+            List<List<string>> listStats = rslt.ReadStats();
 
 
             if (listStats.Count < 1)
             {
-                MessageBox.Show(langparser.finder().Error.FileUnreadable);
+                MessageBox.Show(langparser.Finder().Error.FileUnreadable);
             }
             else
             {
-                List<itemForList> itemList = new List<itemForList> { };
+                List<ItemForList> itemList = new List<ItemForList> { };
 
                 for (int i = listStats.Count-1; i >= 0;  i--)
                 {
@@ -65,13 +51,13 @@ namespace DactyloLibre
 
                     long timeDelta = long.Parse(list[4]) - long.Parse(list[3]);
 
-                    itemList.Add(new itemForList
+                    itemList.Add(new ItemForList
                     {
-                        noms = list[0],
-                        scores = Convert.ToInt32(list[1]),
-                        vitesse = (decimal)(Convert.ToDecimal(list[1]) / (timeDelta/1000 == 0 ? 1 : timeDelta/1000)),
-                        fautes = Convert.ToInt32(list[2]),
-                        temps = timeDelta / 60000 + "min " + timeDelta / 1000 + "s " + timeDelta % 1000 + "ms"
+                        Noms = list[0],
+                        Scores = Convert.ToInt32(list[1]),
+                        Vitesse = (decimal) Math.Round(Convert.ToDecimal(list[1]) / (timeDelta/1000 == 0 ? 1 : timeDelta/1000), 3),
+                        Fautes = Convert.ToInt32(list[2]),
+                        Temps = timeDelta / 60000 + "min " + timeDelta / 1000 + "s " + timeDelta % 1000 + "ms"
                     });
                     
                 }

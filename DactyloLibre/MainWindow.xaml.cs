@@ -3,23 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
+
 using System.Windows.Threading;
-using IniParser;
-using IniParser.Model;
 using DactyloLibre.classes;
-using System.Runtime;
 using System.Windows.Media.Imaging;
-using System.Security.Policy;
-using DactyloLibre.Models;
 
 namespace DactyloLibre
 {
@@ -30,9 +20,8 @@ namespace DactyloLibre
     {
         private const int CHARTEXTMAXCOUT = 200;
 
-        private Int16 charCount = 0;
-        private Int16 fault = 0;
-        private char letter = ' ';
+        private int charCount = 0;
+        private int mistakes = 0;
         private Queue<char> historyLetters = new Queue<char> { };
         private string textPath = "";
         private int timerAlternate_nbTime = 8;
@@ -44,33 +33,33 @@ namespace DactyloLibre
         private DispatcherTimer gameTimer;
         private int alternater_time = 0;
         private long time_start = 0;
-        private Lang_parser langparser = new Lang_parser();
+        private readonly Lang_parser langparser = new Lang_parser();
 
         public MainWindow()
         {
             InitializeComponent();
 
             dTimer = new DispatcherTimer();
-            dTimer.Tick += new EventHandler(dTimerTick_AlertAlternate);
+            dTimer.Tick += new EventHandler(DTimerTick_AlertAlternate);
             dTimer.Interval = new TimeSpan(0, 0, 0, 0, 300);
 
             gameTimer = new DispatcherTimer();
-            gameTimer.Tick += new EventHandler(gameTime_tick);
+            gameTimer.Tick += new EventHandler(GameTime_tick);
             gameTimer.Interval = new TimeSpan(0, 0, 1);
 
         
-            aboutButton.Content = langparser.finder().Buttons.about;
-            importTextBtn_obj.Content = langparser.finder().Buttons.import;
-            launchButten.Content = langparser.finder().Buttons.launch;
-            nameTextbox.Text = langparser.finder().Textbox.name;
-            timeLabel.Content = langparser.finder().Label.time;
-            charachterCount.Content = langparser.finder().Label.characters;
+            aboutButton.Content = langparser.Finder().Buttons.About;
+            importTextBtn_obj.Content = langparser.Finder().Buttons.Import;
+            launchButten.Content = langparser.Finder().Buttons.Launch;
+            nameTextbox.Text = langparser.Finder().Textbox.Name;
+            timeLabel.Content = langparser.Finder().Label.Time;
+            charachterCount.Content = langparser.Finder().Label.Characters;
 
-            imageInstruction.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory()+".\\res\\"+langparser.finder().Image.ImgInstructionName +".png"));
+            imageInstruction.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory()+".\\res\\"+langparser.Finder().Image.ImgInstructionName +".png"));
 
             }
         
-        private void gameTime_tick(Object sender, EventArgs e)
+        private void GameTime_tick(Object sender, EventArgs e)
         {
             if (!playGame) gameTimer.Stop();
             timer_Count++;
@@ -79,23 +68,23 @@ namespace DactyloLibre
             timerShow.Content = (m > 0 ? Convert.ToString(m)+"min " : "") + Convert.ToString(s)+"s";
         }
 
-        private void reloadText()
+        private void ReloadText()
         {
-            List<String> text2w = new List<String> { };
-            text2w = LoadText();
+            List<String> textToWrite = LoadText();
             string t = "";
-            if (text2w.Count > 0)
+
+            if (textToWrite.Count > 0)
             {
-                for (int i = 0; i < text2w.Count; i++)
+                for (int i = 0; i < textToWrite.Count; i++)
                 {
-                    t += text2w[i];
+                    t += textToWrite[i];
                 }
                 textPreview.Content = t;
 
             }
         }
 
-        private void viewletterpanel(char lastletter)
+        private void Viewletterpanel(char letter)
         {
             historyLetters.Enqueue(letter);
 
@@ -104,113 +93,134 @@ namespace DactyloLibre
                 historyLetters.Dequeue();
             }
 
+
+            var keyPressed_elmnt = historyKeyPressed.Children.Cast<Label>();
+
             switch (historyLetters.Count)
             {
 
                 case 1:
-                    historyKeyPressed3.Content = historyLetters.ElementAt(0);
 
+                    keyPressed_elmnt.ElementAt(2).Content = historyLetters.ElementAt(0);
                     break;
+
                 case 2:
-                    historyKeyPressed2.Content = historyLetters.ElementAt(1);
-                    historyKeyPressed3.Content = historyLetters.ElementAt(0);
+                    keyPressed_elmnt.ElementAt(1).Content = historyLetters.ElementAt(1);
+                    keyPressed_elmnt.ElementAt(0).Content = historyLetters.ElementAt(0);
                     break;
+
                 case 3:
-                    historyKeyPressed3.Content = historyLetters.ElementAt(0);
-                    historyKeyPressed2.Content = historyLetters.ElementAt(1);
-                    historyKeyPressed1.Content = historyLetters.ElementAt(2);
+                    keyPressed_elmnt.ElementAt(2).Content = historyLetters.ElementAt(0);
+                    keyPressed_elmnt.ElementAt(1).Content = historyLetters.ElementAt(1);
+                    keyPressed_elmnt.ElementAt(0).Content = historyLetters.ElementAt(2);
                     break;
                 default:
                     break;
             }
 
-            /* 
-             * A revoir
-             */
+        }
+        private void ViewFutureLetterpanel()
+        {
+            Queue<char> future_letters = new Queue<char> { };
 
-            Queue<char> vQueue = new Queue<char> { };
+            // récupération des lettres
 
-            vQueue.Enqueue(lastletter);
-            if (((string)textPreview.Content).Length < 3) return;
-
-            for(int i = 0; i < 2; i++)
+            for (int i = 1; i < 4; i++)
             {
-                vQueue.Enqueue(((string)textPreview.Content)[i]);
+                if (i >= textPreview.Content.ToString().Length) break;
+
+                future_letters.Enqueue(((string)textPreview.Content)[i]);
             }
 
-            if (vQueue.Count > 3) vQueue.Dequeue();
 
-            switch (vQueue.Count)
+            var keyToPress_elmts = historyKeyToPress.Children.Cast<Label>();
+
+            switch (future_letters.Count)
             {
                 case 1:
-                    historyKeyToPressed1.Content = vQueue.ElementAt(0);
+
+                    keyToPress_elmts.ElementAt(0).Content = future_letters.ElementAt(0);
+                    keyToPress_elmts.ElementAt(1).Content = "";
+                    keyToPress_elmts.ElementAt(2).Content = "";
                     break;
+
                 case 2:
-                    historyKeyToPressed2.Content = vQueue.ElementAt(1);
-                    historyKeyToPressed1.Content = vQueue.ElementAt(0);
+                    keyToPress_elmts.ElementAt(0).Content = future_letters.ElementAt(0);
+                    keyToPress_elmts.ElementAt(1).Content = future_letters.ElementAt(1);
+                    keyToPress_elmts.ElementAt(2).Content = "";
+
                     break;
+
                 case 3:
-                    historyKeyToPressed3.Content = vQueue.ElementAt(0);
-                    historyKeyToPressed2.Content = vQueue.ElementAt(2);
-                    historyKeyToPressed1.Content = vQueue.ElementAt(1);
+                    keyToPress_elmts.ElementAt(2).Content = future_letters.ElementAt(2);
+                    keyToPress_elmts.ElementAt(1).Content = future_letters.ElementAt(1);
+                    keyToPress_elmts.ElementAt(0).Content = future_letters.ElementAt(0);
                     break;
+
                 default:
                     break;
             }
             /* *********************** */
         }
 
-        private void stopGame()
+        private void StopGame()
         {
+
+            launchButten.Content = langparser.Finder().Buttons.Launch;
             playGame = false;
             gameTimer.Stop();
 
             long time_finished = DateTimeOffset.Now.ToUnixTimeMilliseconds();            
 
             ResultatTreatment rslt = new ResultatTreatment();
-            if (rslt.appendStats(nameTextbox.Text, charCount, fault, time_start, time_finished))
+            if (rslt.AppendStats(nameTextbox.Text, charCount, mistakes, time_start, time_finished))
             {
-                MessageBox.Show(langparser.finder().Error.saveError);
+                MessageBox.Show(langparser.Finder().Error.saveError);
+            }
+            
+            var keyPressed_elmnt = historyKeyPressed.Children.Cast<Label>();
+            var keyToPress_elmts = historyKeyToPress.Children.Cast<Label>();
+
+            foreach (var item in keyToPress_elmts)
+            {
+                item.Content = "";
+            }
+            foreach (var item in keyPressed_elmnt)
+            {
+                item.Content = "";
             }
 
-            historyKeyPressed1.Content = "";
-            historyKeyPressed2.Content = "";
-            historyKeyPressed3.Content = "";
-            historyKeyToPressed1.Content = "";
-            historyKeyToPressed2.Content = "";
-            historyKeyToPressed3.Content = "";
+
             previewError.Content = "";
             historyLetters.Clear();
             textPreview.Content = "";
             charCount = 0;
-            fault = 0;
+            mistakes = 0;
             timer_Count = 0;
             nbCharText = CHARTEXTMAXCOUT;
             timerShow.Content = 0;
             showKeyPressed.Text = null;
-            charachterCount.Content = langparser.finder().Label.characters + " ";
-            reloadText();
+            charachterCount.Content = langparser.Finder().Label.Characters + " ";
+            ReloadText();
 
-            textAlertMessage = langparser.finder().Alert.gameOver;
+            textAlertMessage = langparser.Finder().Alert.GameOver;
             dTimer.Start();
-
-
             
 
             new Stats().Show();
 
         }
 
-        private void keyDown(object sender, TextChangedEventArgs e)
+        private void KeyChecker(object sender, TextChangedEventArgs e)
         {
             if (!playGame || showKeyPressed.Text.Length < 1) return;
 
-            letter = showKeyPressed.Text[0];
+            char letter = showKeyPressed.Text[0];
 
             if (nbCharText < 1)
             {
                 // Game finished
-                stopGame();
+                StopGame();
                 return;
             }
 
@@ -219,25 +229,27 @@ namespace DactyloLibre
 
             if (((string)textPreview.Content)[0] == letter)
             {
-                charachterCount.Content = langparser.finder().Label.characters + " " + ++charCount;
+                charachterCount.Content = langparser.Finder().Label.Characters + " " + ++charCount;
                 previewError.Foreground = new SolidColorBrush(Colors.Green);
                 previewError.Content = letter;
-                reloadText();
-                viewletterpanel(letter);
+                ReloadText();
+                Viewletterpanel(letter);
             }
             else
             {
-                fault++;
+                mistakes++;
                 previewError.Foreground = Brushes.Red;
                 previewError.Content = letter;
+
             }
+            ViewFutureLetterpanel();
             showKeyPressed.Text = "";
         
         }
 
-        private void aboutClick(object sender, RoutedEventArgs e)
+        private void AboutClick(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://spoutnik911.github.io/DactyloLibre-CsharpVersion/");
+            System.Diagnostics.Process.Start("https://nadnone.github.io/DactyloLibre-CsharpVersion/");
         }
 
         private List<String> LoadText()
@@ -255,7 +267,7 @@ namespace DactyloLibre
                 for (int i = 0; i < nbCharText; i++)
                 {
                     if (file.EndOfStream) break;
-                    Int32 s = file.Read();
+                    int s = file.Read();
                     textToWrite.Add(Convert.ToString(Convert.ToChar(s)));
                 }
 
@@ -270,12 +282,12 @@ namespace DactyloLibre
             }
             else
             {
-                MessageBox.Show(langparser.finder().Error.FileUnreadable);
+                MessageBox.Show(langparser.Finder().Error.FileUnreadable);
                 return new List<String> { };
             }
         }
 
-        private void dTimerTick_AlertAlternate(Object sender, EventArgs e)
+        private void DTimerTick_AlertAlternate(Object sender, EventArgs e)
         {
             if (++alternater_time % 2 > 0)
             {
@@ -295,7 +307,7 @@ namespace DactyloLibre
 
         }
 
-        private void importTextButton(object sender, RoutedEventArgs e)
+        private void ImportTextButton(object sender, RoutedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Text Files | *.txt;";
@@ -310,13 +322,13 @@ namespace DactyloLibre
                 if (File.Exists(textPath))
                 {
                     alertLabel.Foreground = Brushes.Green;
-                    textAlertMessage = langparser.finder().Alert.fileLoaded;
+                    textAlertMessage = langparser.Finder().Alert.FileLoaded;
                     dTimer.Start();
                 }
                 else
                 {
                     alertLabel.Foreground = Brushes.Red;
-                    textAlertMessage = langparser.finder().Alert.fileMissing;
+                    textAlertMessage = langparser.Finder().Alert.FileMissing;
                     dTimer.Start();
                 }
 
@@ -325,55 +337,55 @@ namespace DactyloLibre
 
         }
 
-        private void playDactylo(object sender, RoutedEventArgs e)
+        private void PlayDactylo(object sender, RoutedEventArgs e)
         {
-            if (!playGame && File.Exists(textPath) && nameTextbox.Text != langparser.finder().Textbox.name)
+            if (!playGame && File.Exists(textPath) && nameTextbox.Text != langparser.Finder().Textbox.Name)
             {
                 time_start = DateTimeOffset.Now.ToUnixTimeMilliseconds();
 
                 alertLabel.Foreground = Brushes.Green;
-                textAlertMessage = langparser.finder().Alert.TimerStarted;
+                textAlertMessage = langparser.Finder().Alert.TimerStarted;
                 dTimer.Start();
 
                 gameTimer.Start();
 
-                launchButten.Content = langparser.finder().Buttons.stop;
+                launchButten.Content = langparser.Finder().Buttons.Stop;
 
                 playGame = true;
-                reloadText();
+                ReloadText();
             }
-            else if((string)launchButten.Content == langparser.finder().Buttons.stop && playGame)
+            else if((string)launchButten.Content == langparser.Finder().Buttons.Stop && playGame)
             {
-                stopGame();
+                StopGame();
             }
             else if (!File.Exists(textPath))
             {
                 alertLabel.Foreground = Brushes.Red;
-                textAlertMessage = langparser.finder().Alert.fileMissing;
+                textAlertMessage = langparser.Finder().Alert.FileMissing;
                 dTimer.Start();
             }
-            else if(nameTextbox.Text == langparser.finder().textbox.name)
+            else if(nameTextbox.Text == langparser.Finder().Textbox.Name)
             {
                 alertLabel.Foreground = Brushes.Red;
-                textAlertMessage = langparser.finder().Alert.nameMissing;
+                textAlertMessage = langparser.Finder().Alert.NameMissing;
                 dTimer.Start();
             }
             else if(playGame)
             {
-                launchButten.Content = langparser.finder().Buttons.stop;
+                launchButten.Content = langparser.Finder().Buttons.Stop;
 
                 alertLabel.Foreground = Brushes.Red;
-                textAlertMessage = langparser.finder().Alert.gameAlreadyStarted;
+                textAlertMessage = langparser.Finder().Alert.GameAlreadyStarted;
                 dTimer.Start();
             }
             else
             {
-                MessageBox.Show(langparser.finder().Error.idontKnowButError);
+                MessageBox.Show(langparser.Finder().Error.UnknownError);
             }
             
         }
 
-        private void onClosed(object sender, EventArgs e)
+        private void OnClosed(object sender, EventArgs e)
         {
             Application.Current.Shutdown();
         }

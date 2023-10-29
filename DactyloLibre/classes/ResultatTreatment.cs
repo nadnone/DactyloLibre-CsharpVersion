@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Collections.Generic;
 using System.IO;
 
 
@@ -11,31 +6,29 @@ namespace DactyloLibre
 {
     class ResultatTreatment
     {
-        private string path = ".\\stats.txt";
+        private const string PATH = ".\\stats.txt";
 
-        public List<List<string>> readStats()
+        public List<List<string>> ReadStats()
         {
-            if (!File.Exists(path)) return new List<List<string>> { };
+            if (!File.Exists(PATH)) return new List<List<string>> { };
 
-            StreamReader sr = new StreamReader(path);
+            StreamReader sr = new StreamReader(PATH);
 
             List <List<string>> listStats = new List<List<string>> { };
             List<string> listValues = new List<string> { };
-            
-            string[] values = new string[5];
-            string read = "";
+            string read;
 
             while ((read = sr.ReadLine()) != null)
             {
-               
-                values = read.Split(',');
+
+                string[] values = read.Split(',');
                 if (values.Length < 5) return new List<List<string>> { };
 
-                listValues.Add(values[0]);
-                listValues.Add(values[1]);
-                listValues.Add(values[2]);
-                listValues.Add(values[3]);
-                listValues.Add(values[4]);
+                for (int i = 0; i < 5; i++)
+                {
+                    listValues.Add(values[i]);
+                }
+
 
                 listStats.Add(listValues);
                 listValues = new List<string> { };
@@ -44,7 +37,7 @@ namespace DactyloLibre
             return listStats;
         }
 
-        public bool appendStats(string name, int c, int fault, long timeS, long timeF)
+        public bool AppendStats(string name, int c, int fault, long timeS, long timeF)
         {
 
             name = name.Replace(",", ".");
@@ -53,7 +46,7 @@ namespace DactyloLibre
 
             try
             {
-                File.AppendAllText(path, text+"\n");
+                File.AppendAllText(PATH, text+"\n");
             }
             catch (IOException)
             {

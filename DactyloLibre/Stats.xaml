@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DactyloLibre"
         mc:Ignorable="d"
-        Title="Stats" Height="450" Width="800" Background="#FF24252A" Loaded="loadedpage">
+        Title="Stats" Height="450" Width="800" Background="#FF24252A" Loaded="Loadedpage">
     <Grid>
         <DataGrid x:Name="statsDataGrid" Background="#FF242424" AutoGenerateColumns="False" AlternatingRowBackground="#385E0F" RowBackground="#61B329" Foreground="Black" FontFamily="Calibri" FontSize="18">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="NamesHeader"  Binding="{Binding noms}" Width="25*"/>
-                <DataGridTextColumn x:Name="speedsHeader" Binding="{Binding vitesse}" Width="25*"/>
-                <DataGridTextColumn x:Name="scoresHeader" Binding="{Binding scores}" Width="25*"/>
-                <DataGridTextColumn x:Name="faultsHeader" Binding="{Binding fautes}" Width="25*"/>
-                <DataGridTextColumn x:Name="timesHeader"  Binding="{Binding temps}" Width="25*"/>
+                <DataGridTextColumn x:Name="NamesHeader"  Binding="{Binding Noms}" Width="25*"/>
+                <DataGridTextColumn x:Name="speedsHeader" Binding="{Binding Vitesse}" Width="25*"/>
+                <DataGridTextColumn x:Name="scoresHeader" Binding="{Binding Scores}" Width="25*"/>
+                <DataGridTextColumn x:Name="faultsHeader" Binding="{Binding Fautes}" Width="25*"/>
+                <DataGridTextColumn x:Name="timesHeader"  Binding="{Binding Temps}" Width="25*"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

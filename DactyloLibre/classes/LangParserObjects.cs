@@ -22,53 +22,53 @@ namespace DactyloLibre.Models
 
         public class Buttons
         {
-            public string about { get; set; }
-            public string import { get; set; }
-            public string launch { get; set; }
-            public string stop { get; set; }
+            public string About { get; set; }
+            public string Import { get; set; }
+            public string Launch { get; set; }
+            public string Stop { get; set; }
         }
 
         public class Textbox
         {
-            public string name { get; set; }
+            public string Name { get; set; }
         }
 
         public class Label
         {
-            public string characters { get; set; }
-            public string time { get; set; }
+            public string Characters { get; set; }
+            public string Time { get; set; }
         }
 
         public class Alert
         {
-            public string fileMissing { get; set; }
-            public string nameMissing { get; set; }
-            public string fileLoaded { get; set; }
+            public string FileMissing { get; set; }
+            public string NameMissing { get; set; }
+            public string FileLoaded { get; set; }
             public string TimerStarted { get; set; }
-            public string gameOver { get; set; }
-            public string gameAlreadyStarted { get; set; }
+            public string GameOver { get; set; }
+            public string GameAlreadyStarted { get; set; }
         }
 
         public class Error
         {
             public string FileUnreadable { get; set; }
-            public string idontKnowButError { get; set; }
-            public string saveError { get; set; }
+            public string UnknownError { get; set; }
+            public string SaveError { get; set; }
         }
 
         public class Table_Headers
         {
-            public string names { get; set; }
-            public string speeds { get; set; }
-            public string scores { get; set; }
-            public string faults { get; set; }
-            public string times { get; set; }
+            public string Names { get; set; }
+            public string Speeds { get; set; }
+            public string Scores { get; set; }
+            public string Faults { get; set; }
+            public string Times { get; set; }
         }
 
         public class Image
         {
             public string ImgInstructionName { get; set; }
-            public string _comment { get; set; }
+            public string Comment { get; set; }
         }
 
     }

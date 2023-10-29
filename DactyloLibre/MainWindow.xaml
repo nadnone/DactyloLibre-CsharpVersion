@@ -5,49 +5,74 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DactyloLibre"
         mc:Ignorable="d"
-        Title="DactyloLibre" Height="800" Width="1024" FontFamily="Calibri" Background="#FF24252A" Closed="onClosed">
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="5*"/>
-			<RowDefinition Height="10*"/>
-			<RowDefinition Height="50*"/>
-			<RowDefinition Height="15*"/>
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="10*"/>
-			<ColumnDefinition Width="10*"/>
-			<ColumnDefinition Width="10*"/>
+        Title="DactyloLibre" Height="800" Width="1024" FontFamily="Calibri" Background="#FF24252A" Closed="OnClosed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
 
-			<ColumnDefinition Width="10*"/>
-			<ColumnDefinition Width="10*"/>
-			<ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
 
-			<ColumnDefinition Width="10*"/>
-			<ColumnDefinition Width="10*"/>
-			<ColumnDefinition Width="10*"/>
-		</Grid.ColumnDefinitions>
-        <Button x:Name="aboutButton" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="18" ClickMode="Press" BorderBrush="{x:Null}" Background="White" Click="aboutClick"/>
-        <Button x:Name="importTextBtn_obj" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Background="White" Click="importTextButton" ClickMode="Press"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="aboutButton" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="18" ClickMode="Press" BorderBrush="{x:Null}" Background="White" Click="AboutClick"/>
+        <Button x:Name="importTextBtn_obj" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Background="White" Click="ImportTextButton" ClickMode="Press"/>
         <TextBox VerticalContentAlignment="Center" Margin="10,0" x:Name="nameTextbox" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"/>
-        <Button x:Name="launchButten" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Background="White" Click="playDactylo" ClickMode="Press"/>
-		<Label x:Name="charachterCount" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="18" Foreground="White" VerticalContentAlignment="Center"/>
-		<Label x:Name="timeLabel" Grid.Row="1" Grid.Column="3" FontSize="18" Foreground="White" VerticalContentAlignment="Center"/>
-		<Label x:Name="timerShow" Content="0" Grid.Row="1" Grid.Column="4" FontSize="18" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-		<Label x:Name="alertLabel" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" FontSize="18" FontWeight="Bold" Foreground="White" VerticalContentAlignment="Center"/>
-        
-        <Label x:Name="textPreview" Background="#FF34495E" Grid.Row="2" Foreground="White" FontSize="42" Grid.ColumnSpan="9"/>
-        
-        <Label x:Name="historyKeyPressed3" Grid.Row="3" Grid.Column="0" Margin="0,20" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label x:Name="historyKeyPressed2" Grid.Row="3" Grid.Column="1" Margin="0,20" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label x:Name="historyKeyPressed1" Grid.Row="3" Grid.Column="2" Margin="0,20" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="launchButten" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Background="White" Click="PlayDactylo" ClickMode="Press"/>
+        <Label x:Name="charachterCount" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="18" Foreground="White" VerticalContentAlignment="Center"/>
+        <Label x:Name="timeLabel" Grid.Row="1" Grid.Column="3" FontSize="18" Foreground="White" VerticalContentAlignment="Center"/>
+        <Label x:Name="timerShow" Content="0" Grid.Row="1" Grid.Column="4" FontSize="18" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="alertLabel" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" FontSize="18" FontWeight="Bold" Foreground="White" VerticalContentAlignment="Center"/>
 
-        <TextBox MaxLength="1" x:Name="showKeyPressed" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="1" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" TextChanged="keyDown"/>
+        <Label x:Name="textPreview" Background="#FF34495E" Grid.Row="2" Foreground="White" FontSize="42" Grid.ColumnSpan="9"/>
+
+
+        <TextBox MaxLength="1" x:Name="showKeyPressed" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="1" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" TextChanged="KeyChecker"/>
         <Image x:Name="imageInstruction" Grid.Row="3" Grid.Column="4"/>
         <Label x:Name="previewError" Grid.Row="3" Grid.Column="5" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-        <Label x:Name="historyKeyToPressed1" Grid.Row="3" Grid.Column="6" Margin="0,20" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label x:Name="historyKeyToPressed2" Grid.Row="3" Grid.Column="7" Margin="0,20" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label x:Name="historyKeyToPressed3" Grid.Row="3" Grid.Column="8" Margin="0,20" Background="#FFBDC3C7" FontSize="50" FontWeight="Bold" Foreground="White" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Grid x:Name="historyKeyPressed" Background="#FFBDC3C7" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="50" FontWeight="Bold" Grid.Column="0" Grid.Row="1" Foreground="White" />
+            <Label FontSize="50" FontWeight="Bold" Grid.Column="1" Grid.Row="1" Foreground="White" />
+            <Label FontSize="50" FontWeight="Bold" Grid.Column="2" Grid.Row="1" Foreground="White" />
+        </Grid>
+
+        <Grid x:Name="historyKeyToPress" Grid.Row="3" Background="#FFBDC3C7" Grid.ColumnSpan="3" Grid.Column="6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="50" FontWeight="Bold" Grid.Column="1" Grid.Row="1" Foreground="White" />
+            <Label FontSize="50" FontWeight="Bold" Grid.Column="2" Grid.Row="1" Foreground="White" />
+            <Label FontSize="50" FontWeight="Bold" Grid.Column="0" Grid.Row="1" Foreground="White" />
+        </Grid>
 
 
 
