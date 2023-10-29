@@ -1,39 +1,37 @@
 {
     "Buttons":{
-        "about":"Acerca",
-        "import": "Importar",
-        "launch": "¡Empezar!",
-        "stop": "¡Parar!"
+        "About":"Acerca",
+        "Import": "Importar",
+        "Launch": "¡Empezar!",
+        "Stop": "¡Parar!"
     },
     "Textbox":{
-        "name": "Tu nombre aquí"
+        "Name": "Tu nombre aquí"
     },
     "Label": {
-        "characters": "Caracteres",
-        "time": "Tiempos"
+        "Characters": "Caracteres",
+        "Time": "Tiempos",
+        "InfoPrev": "? [Need translation]",
+        "InfoTypeArea": "? [Need translation]"
     },
     "Alert":{
-        "fileMissing": "¡Archivo perdido!",
-        "nameMissing": "¡Nombre ausente!",
-        "fileLoaded": "¡Archivo importado!",
+        "FileMissing": "¡Archivo perdido!",
+        "NameMissing": "¡Nombre ausente!",
+        "FileLoaded": "¡Archivo importado!",
         "TimerStarted": "¡El juego está abierto, el tiempo se acaba!",
-        "gameOver": "¡Juego finalizado!",
-        "gameAlreadyStarted": "¡Ya ha comenzado el juego!"
+        "GameOver": "¡Juego finalizado!",
+        "GameAlreadyStarted": "¡Ya ha comenzado el juego!"
     },
     "Error":{
         "FileUnreadable": "Archivo ilegible o no ha sido encontrado",
-        "idontKnowButError": "Se ha producido un error",
-        "saveError": "Se produjo un error al guardar la información del juego."
+        "UnknownError": "Se ha producido un error",
+        "SaveError": "Se produjo un error al guardar la información del juego."
     },
     "Table_headers":{
-        "names": "Nombres",
-        "speeds": "Velocidades [p/s]",
-        "scores": "Puntuaciones [caracteres]",
-        "faults": "Errores [caracteres]",
-        "times": "Tiempos [min s ms]"
-    },
-    "Image":{
-        "ImgInstructionName": "info_instruction_fr",
-        "_comment": "solo el nombre del archivo en la carpeta res/ con la extensión png para ´ImgInstructionName´"
+        "Names": "Nombres",
+        "Speeds": "Velocidades [p/s]",
+        "Scores": "Puntuaciones [caracteres]",
+        "Faults": "Errores [caracteres]",
+        "Times": "Tiempos [min s ms]"
     }
 }
