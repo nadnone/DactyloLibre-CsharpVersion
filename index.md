@@ -8,7 +8,6 @@ DactyloLibre is usable. However, it is its first time testing version, I'm open 
 
  | Versions                   | Liens                                                                                              |
  |  ------------------------- | -------------------------------------------------------------------------------------------------- |
- | DactyloLibre Alpha 1.0.2.2 | [EXE unsigned (zip)](https://github.com/nadnone/DactyloLibre-CsharpVersion/releases/tag/1.0.2.2/)  |
  | DactyloLibre Alpha 1.0.2.1 | [EXE unsigned (zip)](https://github.com/nadnone/DactyloLibre-CsharpVersion/releases/1.0.2.1/)      |
  | DactyloLibre Alpha 1.0.2   | [EXE unsigned (zip)](https://github.com/nadnone/DactyloLibre-CsharpVersion/releases/1.0.2/)        |
  | DactyloLibre Alpha 1.0.1   | [EXE unsigned (zip)](https://github.com/nadnone/DactyloLibre-CsharpVersion/releases/1.0.1/)        |
